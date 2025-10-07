@@ -15,12 +15,12 @@ jobs:
       fail-fast: false
       matrix:
         platform:
-          - { name: FreeBSD,  os: freebsd,  os-version: 14.2, os-arch: x86-64,
+          - { name: FreeBSD,  os: freebsd,  os-version: 14.3, os-arch: x86-64,
               cmake_opts: '-DWANT_OSS=ON',
               setup_cmd: 'sudo pkg update',
               install_cmd: 'sudo pkg install -y cmake',
             }
-          - { name: OpenBSD,  os: openbsd, os-version: 7.4,  os-arch: x86-64,
+          - { name: OpenBSD,  os: openbsd, os-version: 7.7,  os-arch: x86-64,
               cmake_opts: '-DWANT_SNDIO=ON',
               setup_cmd: 'sudo pkg_add -u',
               install_cmd: 'sudo pkg_add cmake',
@@ -33,7 +33,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build
-      uses: cross-platform-actions/action@v0.27.0
+      uses: cross-platform-actions/action@v0.29.0
       with:
         operating_system: ${{ matrix.platform.os }}
         architecture: ${{ matrix.platform.os-arch }}
