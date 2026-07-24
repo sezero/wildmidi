@@ -42,7 +42,7 @@ Requirements:
 
 CHANGELOG
 
-0.5.0 (2026-07-12)
+0.5.0 (2026-07-24)
 * SoundFont2 (SF2) rendering support via TinySoundFont. Enabled by default,
   cmake configuration: `WANT_SF2=ON`. Pass either an `.sf2` file, or a config
   file with a `soundfont` directive to WildMidi_Init().
