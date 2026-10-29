@@ -30,11 +30,11 @@ MODE=${5:-}
 # share a version -- check the builder's releases when bumping an OS version.
 case $OS in
 freebsd)
-    OSVER=14.4
+    OSVER=14.5
     BUILDER_TAG=v0.15.0
     CMAKE_OPTS="-DWANT_OSS=ON"
     SETUP_CMD="sudo pkg update -q"
-    INSTALL_CMD="sudo pkg install -y cmake"
+    INSTALL_CMD="sudo pkg install -y cmake-core"
     ;;
 openbsd)
     OSVER=7.9
